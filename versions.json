@@ -1,5 +1,13 @@
 [
   {
+    "tag": "version-2c6fd5e09aaf4cfa",
+    "count": 1653,
+    "dump_time": "2026-11-17 20:48:30",
+    "not_working": 0,
+    "file": "offsets_version-2c6fd5e09aaf4cfa.json",
+    "uploaded_at": "2026-11-17T18:04:53.422Z"
+  },
+  {
     "tag": "version-4ea8e85481e34f46",
     "count": 1654,
     "dump_time": "2026-11-14 19:37:23",
