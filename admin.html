@@ -511,6 +511,7 @@ select option{background:#0d0f15;color:#f2f4f8}
 }
 .st-pill.rbx{color:var(--accent2);border-color:rgba(255,138,0,.35);background:rgba(255,138,0,.08)}
 .st-pill.dc{color:#8b99ff;border-color:rgba(139,153,255,.35);background:rgba(88,101,242,.1)}
+.st-pill.gh{color:#e6edf3;border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
 
 /* Terminal Log */
 .log{
@@ -550,6 +551,7 @@ body.light .login-card{background:linear-gradient(165deg,#ffffff,#f7f8fb);box-sh
 body.light .stats-toolbar{background:linear-gradient(135deg,rgba(255,123,0,.09),#ffffff)}
 body.light .chart-tooltip{background:rgba(255,255,255,.97);color:#11131a;box-shadow:0 12px 30px rgba(15,20,35,.16)}
 body.light .log{background:#11131a;color:#e5e7eb}
+body.light .st-pill.gh{color:#11131a;border-color:rgba(15,20,30,.2);background:rgba(15,20,30,.05)}
 
 .hidden{display:none !important}
 @media(max-width:768px){
@@ -1044,7 +1046,7 @@ body.light .log{background:#11131a;color:#e5e7eb}
       </div>
 
       <p class="hint" style="margin-top:0">
-        Bu alandaki yetkililer ana sitedeki "Yetkili Kadrosu" sekmesinde canlı Discord avatarı, Discord profil bağlantısı ve <b>Roblox profil bağlantısı</b> (<code>robloxId</code> + <code>@robloxTag</code>) ile listelenir.
+        Bu alandaki yetkililer ana sitedeki "Yetkili Kadrosu" sekmesinde canlı Discord avatarı, Discord profil bağlantısı, <b>Roblox profil bağlantısı</b> (<code>robloxId</code> + <code>@robloxTag</code>) ve <b>GitHub profil bağlantısı</b> (<code>github</code>) ile listelenir.
       </p>
 
       <div class="staff-grid-wrap" id="staffRows"></div>
@@ -1113,6 +1115,7 @@ const FIXED_USER='Mur4Offsets',FIXED_REPO='mur4offsets.github.io',FIXED_BRANCH='
 const FOUNDER_DISCORD_ID='910806118526234624';
 const FOUNDER_ROBLOX_ID='2218187665';
 const FOUNDER_ROBLOX_TAG='SGG234676';
+const FOUNDER_GITHUB='Mur4t0';
 const DISCORD_INVITES=[
   {invite:'xQzrwQCSjg',name:'Mur4 Offsets'},
   {invite:'JdDNqvUWhM',name:'Mur4Scripts'}
@@ -2047,18 +2050,28 @@ async function uploadAll(){
   }
 }
 
-/* ---- KADRO YONETIMI (DISCORD + ROBLOX ID & TAG) ---- */
+/* ---- KADRO YONETIMI (DISCORD + ROBLOX ID & TAG + GITHUB) ---- */
+function normalizeGhHandle(raw){
+  return String(raw||'').trim()
+    .replace(/^https?:\/\/(www\.)?github\.com\//i,'')
+    .replace(/[?#].*$/,'')
+    .replace(/^[@/]+|\/+$/g,'')
+    .split('/')[0]
+    .trim();
+}
 function staffAdd(preset){
-  staffList.push(preset||{name:'',rank:'Yetkili',discordId:'',discordTag:'',robloxId:'',robloxTag:''});
+  staffList.push(preset||{name:'',rank:'Yetkili',discordId:'',discordTag:'',robloxId:'',robloxTag:'',github:''});
   staffRender();
 }
 function staffDel(i){staffList.splice(i,1);staffRender()}
 function staffPillsMarkup(m){
   const rbxId=(m.robloxId||m.robloxUserId||'').trim();
   const rbxTag=(m.robloxTag||m.robloxUsername||'').replace(/^@/,'').trim();
+  const gh=normalizeGhHandle(m.github||m.githubUser||m.githubUrl);
   const dcPill=m.discordId?`<a class="st-pill dc" href="https://discord.com/users/${encodeURIComponent(m.discordId)}" target="_blank" rel="noopener noreferrer">Discord: ${escapeHtml(m.discordTag||m.discordId)} ↗</a>`:'';
   const rbxPill=rbxId?`<a class="st-pill rbx" href="https://www.roblox.com/users/${encodeURIComponent(rbxId)}/profile" target="_blank" rel="noopener noreferrer">Roblox: ${escapeHtml(rbxTag?'@'+rbxTag:rbxId)} ↗</a>`:'';
-  return dcPill+rbxPill;
+  const ghPill=gh?`<a class="st-pill gh" href="https://github.com/${encodeURIComponent(gh)}" target="_blank" rel="noopener noreferrer">GitHub: @${escapeHtml(gh)} ↗</a>`:'';
+  return dcPill+rbxPill+ghPill;
 }
 function updateStaffCardPreview(i){
   const m=staffList[i];if(!m)return;
@@ -2082,6 +2095,7 @@ function staffRender(){
   w.innerHTML=staffList.map((m,i)=>{
     const rbxId=(m.robloxId||m.robloxUserId||'').trim();
     const rbxTag=(m.robloxTag||m.robloxUsername||'').replace(/^@/,'').trim();
+    const ghVal=normalizeGhHandle(m.github||m.githubUser||m.githubUrl);
     const pills=staffPillsMarkup(m);
     return `<div class="st-card">
       <div class="st-head">
@@ -2119,6 +2133,10 @@ function staffRender(){
           <label>Roblox User ID</label>
           <input placeholder="örn. 2218187665" value="${escapeHtml(rbxId)}" oninput="this.value=this.value.replace(/[^0-9]/g,'');staffList[${i}].robloxId=this.value;delete staffList[${i}].robloxUserId;updateStaffCardPreview(${i})">
         </div>
+        <div style="grid-column:1/-1">
+          <label>GitHub Kullanıcı Adı veya Profil Linki</label>
+          <input placeholder="örn. Mur4t0 veya https://github.com/Mur4t0" value="${escapeHtml(ghVal)}" oninput="staffList[${i}].github=normalizeGhHandle(this.value);delete staffList[${i}].githubUser;delete staffList[${i}].githubUrl;updateStaffCardPreview(${i})">
+        </div>
       </div>
       <div class="st-preview-pills" id="staffCardPills-${i}" style="${pills?'':'display:none'}">${pills}</div>
     </div>`;
@@ -2134,12 +2152,13 @@ async function loadStaffToPanel(){
         if(m.discordId===FOUNDER_DISCORD_ID){
           if(!m.robloxId&&!m.robloxUserId)m.robloxId=FOUNDER_ROBLOX_ID;
           if(!m.robloxTag&&!m.robloxUsername)m.robloxTag=FOUNDER_ROBLOX_TAG;
+          if(!m.github&&!m.githubUser&&!m.githubUrl)m.github=FOUNDER_GITHUB;
         }
       });
       staffRender();return;
     }
   }catch(e){}
-  if(!staffList.length)staffAdd({name:'Mur4t',rank:'Founder',discordId:FOUNDER_DISCORD_ID,discordTag:'! A 1 Mur4t',robloxId:FOUNDER_ROBLOX_ID,robloxTag:FOUNDER_ROBLOX_TAG});
+  if(!staffList.length)staffAdd({name:'Mur4t',rank:'Founder',discordId:FOUNDER_DISCORD_ID,discordTag:'! A 1 Mur4t',robloxId:FOUNDER_ROBLOX_ID,robloxTag:FOUNDER_ROBLOX_TAG,github:FOUNDER_GITHUB});
 }
 async function staffPush(){
   CFG.pat=getToken();if(!CFG.pat){logout();return}
@@ -2149,8 +2168,10 @@ async function staffPush(){
     if((m.discordTag||'').trim())out.discordTag=m.discordTag.trim();
     const rId=(m.robloxId||m.robloxUserId||'').trim();
     const rTag=(m.robloxTag||m.robloxUsername||'').replace(/^@/,'').trim();
+    const gh=normalizeGhHandle(m.github||m.githubUser||m.githubUrl);
     if(rId)out.robloxId=rId;
     if(rTag)out.robloxTag=rTag;
+    if(gh)out.github=gh;
     return out;
   });
   if(!clean.length){msg('m2','Lütfen en az bir yetkili girin.',false);return}

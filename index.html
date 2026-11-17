@@ -1067,6 +1067,8 @@ td:last-child{font-family:Consolas,monospace;color:var(--green)}
 .staff-link.dc:hover{border-color:rgba(139,153,255,.55);background:rgba(88,101,242,.12)}
 .staff-link.rbx:hover{border-color:var(--accent);background:rgba(255,123,0,.11)}
 .staff-link.rbx:hover .icn{transform:rotate(90deg) scale(1.08)}
+.staff-link.gh .icn{color:#e6edf3}
+.staff-link.gh:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.08)}
 
 .ann-card{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-left:4px solid var(--tag-accent,var(--accent));border-radius:16px;padding:22px;margin-bottom:16px;transition:all .25s ease;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.25)}
 .ann-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.18);box-shadow:0 12px 32px rgba(0,0,0,.4)}
@@ -1296,6 +1298,8 @@ body.light .hero-wrap{box-shadow:0 20px 55px rgba(15,20,35,.16)}
 body.light .me-pill,body.light .staff-link,body.light .footer-link{background:rgba(15,20,30,.035);border-color:rgba(15,20,30,.11)}
 body.light .me-pill.dc:hover,body.light .staff-link.dc:hover{background:rgba(88,101,242,.10);border-color:rgba(88,101,242,.45)}
 body.light .me-pill.rbx:hover,body.light .staff-link.rbx:hover,body.light .footer-link:hover{background:rgba(255,123,0,.10);border-color:var(--accent)}
+body.light .staff-link.gh .icn{color:#11131a}
+body.light .staff-link.gh:hover{background:rgba(15,20,30,.08);border-color:rgba(15,20,30,.32)}
 body.light .gh-card{background:linear-gradient(160deg,#ffffff,#f7f8fb);box-shadow:0 10px 28px rgba(15,20,35,.08)}
 body.light .gh-stat-pill{background:rgba(15,20,30,.04);border-color:rgba(15,20,30,.10)}
 body.light .gh-cta-pill{color:#b45309}
@@ -2513,6 +2517,14 @@ function renderAnnouncements(){
 
 /* ---- STAFF (Tab + Home Önizleme) ---- */
 const DC_AVA_CACHE={};
+function normalizeGhHandle(raw){
+  return String(raw||"").trim()
+    .replace(/^https?:\/\/(www\.)?github\.com\//i,"")
+    .replace(/[?#].*$/,"")
+    .replace(/^[@/]+|\/+$/g,"")
+    .split("/")[0]
+    .trim();
+}
 function renderStaff(){
   const grid=document.getElementById("staffGrid");
   const homeGrid=document.getElementById("homeStaffPreview");
@@ -2528,15 +2540,21 @@ function renderStaff(){
       const src=DC_AVA_CACHE[m.discordId]||"https://cdn.discordapp.com/embed/avatars/0.png";
       return `<img src="${src}" data-dcid="${m.discordId}" alt="" onerror="this.parentNode.innerHTML='${initial}'">`;
     }
+    const gh=normalizeGhHandle(m.github||m.githubUser||m.githubUrl);
+    if(gh){
+      return `<img src="https://github.com/${encodeURIComponent(gh)}.png?size=128" alt="" onerror="this.parentNode.innerHTML='${initial}'">`;
+    }
     return initial;
   };
   if(grid){
     grid.innerHTML=staff.map(m=>{
       const rbxId=m.robloxId||m.robloxUserId||(m.discordId===MY_DISCORD_ID?MY_ROBLOX_ID:"");
       const rbxTag=m.robloxTag||m.robloxUsername||(rbxId===MY_ROBLOX_ID?MY_ROBLOX_USERNAME:"");
+      const ghHandle=normalizeGhHandle(m.github||m.githubUser||m.githubUrl);
       const dcLink=m.discordId?`<a class="staff-link dc" href="https://discord.com/users/${encodeURIComponent(m.discordId)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t("dcProfile"))}">${dcIconHtml(14)} <span>${escapeHtml(m.discordTag||"Discord")}</span></a>`:"";
       const rbxLink=rbxId?`<a class="staff-link rbx" href="${rbxProfileUrl(rbxId)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t("rbxProfile"))}">${rbxIconHtml(14)} <span>${escapeHtml(rbxTag?"@"+rbxTag:t("rbxProfile"))}</span></a>`:"";
-      const links=(dcLink||rbxLink)?`<div class="staff-links">${dcLink}${rbxLink}</div>`:"";
+      const ghLink=ghHandle?`<a class="staff-link gh" href="https://github.com/${encodeURIComponent(ghHandle)}" target="_blank" rel="noopener noreferrer" title="GitHub">${ghIconHtml(14)} <span>@${escapeHtml(ghHandle)}</span></a>`:"";
+      const links=(dcLink||rbxLink||ghLink)?`<div class="staff-links">${dcLink}${rbxLink}${ghLink}</div>`:"";
       return `<div class="staff-card">
       <div class="ava">${makeAva(m)}</div>
       <div style="font-weight:800;font-size:17px">${escapeHtml(m.name||"?")}</div>
