@@ -1,10 +1,10 @@
 {
   "name": "Mur4 Offsets (External)",
-  "website": "https://mur4exe.github.io/Mur4-Offsets-Roblox-Website/",
+  "website": "https://mur4offsets.github.io",
   "type": "external",
-  "version": "version-4ea8e85481e34f46",
-  "dump_time": "2026-11-14 19:37:23",
-  "count": 1654,
+  "version": "version-2c6fd5e09aaf4cfa",
+  "dump_time": "2026-11-17 20:48:30",
+  "count": 1653,
   "offsets": {
     "Accessory": {
       "AttachmentPos": "0xC4"
@@ -20,7 +20,7 @@
       "AttachmentPos": "0xC4"
     },
     "AdGui": {
-      "FallbackImageContent": "0x610"
+      "FallbackImageContent": "0x618"
     },
     "AdPlacement": {
       "PlacementId": "0x118"
@@ -264,13 +264,13 @@
       "UpperAngle": "0x16C"
     },
     "BasePart": {
+      "CanCollide": "0x69",
       "LocalTransparencyModifier": "0xF0",
       "Reflectance": "0xF4",
       "Transparency": "0x118",
       "CastShadow": "0x120",
       "Primitive": "0x178",
       "CanQuery": "0x322",
-      "CanCollide": "0x440",
       "Locked": "0x520",
       "Anchored": "0x521",
       "Massless": "0x5A1",
@@ -293,8 +293,8 @@
       "FaceCamera": "0x19D"
     },
     "BillboardGui": {
-      "Enabled": "0x260",
       "ResetOnSpawn": "0x261",
+      "Enabled": "0x40D",
       "Size": "0x528",
       "ExtentsOffset": "0x538",
       "ExtentsOffsetWorldSpace": "0x544",
@@ -421,10 +421,10 @@
     },
     "ColorCorrectionEffect": {
       "Enabled": "0x98",
-      "TintColor": "0xA0",
-      "Brightness": "0xAC",
-      "Contrast": "0xB0",
-      "Saturation": "0xB4"
+      "TintColor": "0xD0",
+      "Brightness": "0xDC",
+      "Contrast": "0xE4",
+      "Saturation": "0xE8"
     },
     "ColorGradingEffect": {
       "Enabled": "0x98",
@@ -456,7 +456,6 @@
       "SearchDistance": "0x27C"
     },
     "CornerWedgePart": {
-      "CollisionGroup": "0x68",
       "BackParamA": "0xB0",
       "BackParamB": "0xB4",
       "BottomParamA": "0xC0",
@@ -676,7 +675,7 @@
     "FakeDataModel": {
       "DataModel": "0x1F8",
       "RealDataModel": "0x1F8",
-      "Pointer": "0x8F8E968"
+      "Pointer": "0x8E16368"
     },
     "FileMesh": {
       "Offset": "0xA0",
@@ -720,9 +719,8 @@
       "Velocity": "0x360",
       "RotVelocity": "0x36C",
       "Size": "0x444",
-      "Friction": "0x4DC",
-      "Elasticity": "0x4E0",
-      "MaterialVariant": "0x538"
+      "Friction": "0x4E4",
+      "Elasticity": "0x4E8"
     },
     "FlangeSoundEffect": {
       "Priority": "0xA0",
@@ -835,7 +833,6 @@
       "MotorMaxTorque": "0x170",
       "Radius": "0x174",
       "Restitution": "0x178",
-      "ServoMaxTorque": "0x17C",
       "TargetAngle": "0x180",
       "UpperAngle": "0x184"
     },
@@ -843,7 +840,6 @@
       "TextureId": "0x348"
     },
     "Humanoid": {
-      "EvaluateStateMachine": "0x68",
       "DisplayName": "0xA0",
       "CameraOffset": "0x110",
       "WalkToPoint": "0x158",
@@ -851,8 +847,6 @@
       "HealthDisplayDistance": "0x17C",
       "Health": "0x184",
       "HipHeight": "0x188",
-      "JumpHeight": "0x198",
-      "JumpPower": "0x19C",
       "MaxHealth": "0x1A0",
       "MaxSlopeAngle": "0x1A4",
       "NameDisplayDistance": "0x1A8",
@@ -862,14 +856,15 @@
       "AutomaticScalingEnabled": "0x1CE",
       "BreakJointsOnDeath": "0x1D0",
       "Jump": "0x1D4",
-      "PlatformStand": "0x1D6",
-      "RequiresNeck": "0x1D7",
-      "Sit": "0x1D8",
-      "UseJumpPower": "0x1DA",
-      "WalkspeedCheck": "0x3A4",
-      "HumanoidRootPart": "0x468",
-      "Torso": "0x4C8",
-      "HumanoidState": "0x8B0"
+      "PlatformStand": "0x1D5",
+      "RequiresNeck": "0x1D6",
+      "Sit": "0x1D7",
+      "UseJumpPower": "0x1D9",
+      "WalkspeedCheck": "0x39C",
+      "HumanoidRootPart": "0x460",
+      "Torso": "0x4C0",
+      "EvaluateStateMachine": "0x5E1",
+      "HumanoidState": "0x8A8"
     },
     "HumanoidDescription": {
       "ClimbAnimation": "0xC0",
@@ -1051,7 +1046,6 @@
       "Value": "0xB0"
     },
     "IntersectOperation": {
-      "CollisionGroup": "0x68",
       "BackParamA": "0xB0",
       "BackParamB": "0xB4",
       "BottomParamA": "0xC0",
@@ -1093,8 +1087,8 @@
       "FogEnd": "0x114",
       "FogStart": "0x118",
       "GeographicLatitude": "0x11C",
-      "ShadowSoftness": "0x124",
-      "Sky": "0x1B0"
+      "ShadowSoftness": "0x128",
+      "Sky": "0x1B8"
     },
     "LineForce": {
       "Magnitude": "0x158",
@@ -1135,6 +1129,7 @@
       "StudsPerTile": "0x200"
     },
     "MeshPart": {
+      "CollisionGroup": "0x68",
       "BackParamA": "0xB0",
       "BackParamB": "0xB4",
       "BottomParamA": "0xC0",
@@ -1153,7 +1148,8 @@
       "MeshId": "0x2F8",
       "Texture": "0x328",
       "TextureID": "0x328",
-      "DoubleSided": "0x364"
+      "DoubleSided": "0x364",
+      "MaterialVariant": "0x438"
     },
     "Misc": {
       "AnimationId": "0xA8",
@@ -1161,7 +1157,8 @@
     },
     "Model": {
       "Scale": "0x12C",
-      "PrimaryPart": "0x240"
+      "PrimaryPart": "0x240",
+      "ExplorerIconContent": "0xA90"
     },
     "ModuleScript": {
       "GUID": "0xB8",
@@ -1172,7 +1169,6 @@
       "Part1": "0x110"
     },
     "NegateOperation": {
-      "CollisionGroup": "0x68",
       "BackParamA": "0xB0",
       "BackParamB": "0xB4",
       "BottomParamA": "0xC0",
@@ -1199,6 +1195,7 @@
     },
     "Part": {
       "CollisionGroup": "0x68",
+      "CanCollide": "0x69",
       "BackParamA": "0xB0",
       "BackParamB": "0xB4",
       "BottomParamA": "0xC0",
@@ -1216,9 +1213,7 @@
       "Transparency": "0x118",
       "CastShadow": "0x120",
       "Primitive": "0x178",
-      "MaterialVariant": "0x238",
       "CanQuery": "0x322",
-      "CanCollide": "0x440",
       "Locked": "0x520",
       "Anchored": "0x521",
       "Massless": "0x5A1",
@@ -1341,9 +1336,9 @@
       "RotVelocity": "0xEC",
       "Flags": "0x1BE",
       "Size": "0x1C4",
-      "Owner": "0x218",
-      "Friction": "0x25C",
-      "Elasticity": "0x260"
+      "Owner": "0x220",
+      "Friction": "0x264",
+      "Elasticity": "0x268"
     },
     "PrimitiveFlags": {
       "Anchored": "0x2",
@@ -1365,7 +1360,8 @@
       "Velocity": "0x184"
     },
     "ProceduralModel": {
-      "Size": "0x360"
+      "Size": "0x360",
+      "ExplorerIconContent": "0x410"
     },
     "ProximityPrompt": {
       "ActionText": "0x98",
@@ -1432,9 +1428,9 @@
       "WinchTarget": "0x170"
     },
     "ScreenGui": {
-      "IgnoreGuiInset": "0x68",
       "Enabled": "0x260",
       "ResetOnSpawn": "0x261",
+      "IgnoreGuiInset": "0x296",
       "DisplayOrder": "0x508"
     },
     "Script": {
@@ -1442,7 +1438,6 @@
       "ByteCode": "0x178"
     },
     "ScrollingFrame": {
-      "ScrollingEnabled": "0x13C",
       "Position": "0x2A8",
       "Size": "0x2C8",
       "BackgroundColor3": "0x2D8",
@@ -1462,7 +1457,8 @@
       "ScrollBarImageColor3": "0x728",
       "CanvasPosition": "0x73C",
       "ScrollBarImageTransparency": "0x764",
-      "ScrollBarThickness": "0x768"
+      "ScrollBarThickness": "0x768",
+      "ScrollingEnabled": "0x77C"
     },
     "Seat": {
       "BackParamA": "0xB0",
@@ -1485,9 +1481,9 @@
       "Velocity": "0x360",
       "RotVelocity": "0x36C",
       "Size": "0x444",
-      "CollisionGroup": "0x4C0",
-      "Friction": "0x4DC",
-      "Elasticity": "0x4E0"
+      "CollisionGroup": "0x4C8",
+      "Friction": "0x4E4",
+      "Elasticity": "0x4E8"
     },
     "SelectionBox": {
       "Color3": "0xC0",
@@ -1565,14 +1561,14 @@
       "TimePosition": "0xE0",
       "LoopRegion": "0xE8",
       "PlaybackRegion": "0xF0",
-      "PlaybackSpeed": "0x10C",
-      "RollOffMaxDistance": "0x110",
-      "RollOffMinDistance": "0x114",
-      "Volume": "0x120",
-      "Looped": "0x12D",
-      "PlayOnRemove": "0x12E",
-      "PlaybackRegionsEnabled": "0x12F",
-      "Playing": "0x130"
+      "PlaybackSpeed": "0xFC",
+      "RollOffMaxDistance": "0x100",
+      "RollOffMinDistance": "0x104",
+      "Volume": "0x110",
+      "Looped": "0x115",
+      "PlayOnRemove": "0x116",
+      "PlaybackRegionsEnabled": "0x117",
+      "Playing": "0x118"
     },
     "SoundService": {
       "DistanceFactor": "0x14C",
@@ -1604,7 +1600,8 @@
       "Duration": "0x1D0",
       "AllowTeamChangeOnTouch": "0x1D8",
       "Enabled": "0x1D9",
-      "Neutral": "0x1DA"
+      "Neutral": "0x1DA",
+      "MaterialVariant": "0x238"
     },
     "SpecialMesh": {
       "Offset": "0xA0",
@@ -1672,14 +1669,14 @@
       "Enabled": "0x260",
       "ResetOnSpawn": "0x261",
       "Active": "0x51C",
-      "Brightness": "0x608",
-      "LightInfluence": "0x610",
-      "MaxDistance": "0x614",
-      "PixelsPerStud": "0x618",
-      "ToolPunchThroughDistance": "0x624",
-      "ZOffset": "0x628",
-      "AlwaysOnTop": "0x62C",
-      "ClipsDescendants": "0x62D"
+      "Brightness": "0x610",
+      "LightInfluence": "0x618",
+      "MaxDistance": "0x61C",
+      "PixelsPerStud": "0x620",
+      "ToolPunchThroughDistance": "0x62C",
+      "ZOffset": "0x630",
+      "AlwaysOnTop": "0x634",
+      "ClipsDescendants": "0x635"
     },
     "SurfaceLight": {
       "Color": "0xA8",
@@ -1705,7 +1702,7 @@
       "JobName": "0x18",
       "JobStart": "0xC8",
       "JobEnd": "0xD0",
-      "Pointer": "0x8F1E408"
+      "Pointer": "0x8DA5D98"
     },
     "Team": {
       "Score": "0x9C",
@@ -1728,10 +1725,10 @@
       "StudsPerTile": "0x1D8"
     },
     "TextBox": {
-      "RichText": "0x48",
-      "TextWrapped": "0x48",
-      "ClearTextOnFocus": "0x69",
-      "TextScaled": "0x1A9",
+      "ClearTextOnFocus": "0x68",
+      "TextScaled": "0x68",
+      "TextWrapped": "0x68",
+      "RichText": "0x1A1",
       "Position": "0x2A8",
       "Size": "0x2C8",
       "BackgroundColor3": "0x2D8",
@@ -1800,7 +1797,8 @@
       "TopP": "0xC0"
     },
     "TextLabel": {
-      "TextWrapped": "0x1A1",
+      "TextWrapped": "0x48",
+      "RichText": "0x130",
       "Position": "0x2A8",
       "Size": "0x2C8",
       "BackgroundColor3": "0x2D8",
@@ -1814,8 +1812,7 @@
       "Active": "0x340",
       "ClipsDescendants": "0x341",
       "Visible": "0x345",
-      "RichText": "0x658",
-      "TextScaled": "0x749",
+      "TextScaled": "0x411",
       "Text": "0x888",
       "LineHeight": "0x8E0",
       "OpenTypeFeatures": "0xAD8",
@@ -1899,7 +1896,8 @@
       "RightParamB": "0xFC",
       "TopParamA": "0x108",
       "TopParamB": "0x10C",
-      "Transparency": "0x118"
+      "Transparency": "0x118",
+      "MaterialVariant": "0x238"
     },
     "UIAspectRatioConstraint": {
       "AspectRatio": "0xB8"
@@ -2006,6 +2004,7 @@
       "Force": "0x158"
     },
     "VehicleSeat": {
+      "CollisionGroup": "0x68",
       "BackParamA": "0xB0",
       "BackParamB": "0xB4",
       "BottomParamA": "0xC0",
@@ -2093,7 +2092,7 @@
       "ViewMatrix": "0x170",
       "FakeDataModel": "0xAF0",
       "Dimensions": "0xB10",
-      "Pointer": "0x8A11808"
+      "Pointer": "0x8896B98"
     },
     "WedgePart": {
       "BackParamA": "0xB0",
