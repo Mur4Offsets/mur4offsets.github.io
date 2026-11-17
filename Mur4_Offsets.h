@@ -3,12 +3,12 @@
 /*                       By: Mur4t
 /*  Discord: Mur4 Offsets -> discord.gg/pFKXtFNN5C
 /*  Discord: Mur4tScripts -> discord.gg/JdDNqvUWhM
-/*  Website : https://mur4exe.github.io/Mur4-Offsets-Roblox-Website/
+/*  Website : https://mur4offsets.github.io
 /* -------------------------------------------------------------
 /*  Type            : External Offsets (direct memory read/write)
-/*  Roblox Version  : version-4ea8e85481e34f46
-/*  Dumped At       : 2026-11-14 19:37:23
-/*  Total Offsets   : 1654 (248 classes)
+/*  Roblox Version  : version-2c6fd5e09aaf4cfa
+/*  Dumped At       : 2026-11-17 20:48:30
+/*  Total Offsets   : 1653 (248 classes)
 /* =============================================================
 */
 
@@ -33,7 +33,7 @@ namespace Mur4 {
     }
 
     namespace AdGui {
-        inline constexpr uintptr_t FallbackImageContent = 0x610;
+        inline constexpr uintptr_t FallbackImageContent = 0x618;
     }
 
     namespace AdPlacement {
@@ -319,13 +319,13 @@ namespace Mur4 {
     }
 
     namespace BasePart {
+        inline constexpr uintptr_t CanCollide = 0x69;
         inline constexpr uintptr_t LocalTransparencyModifier = 0xF0;
         inline constexpr uintptr_t Reflectance = 0xF4;
         inline constexpr uintptr_t Transparency = 0x118;
         inline constexpr uintptr_t CastShadow = 0x120;
         inline constexpr uintptr_t Primitive = 0x178;
         inline constexpr uintptr_t CanQuery = 0x322;
-        inline constexpr uintptr_t CanCollide = 0x440;
         inline constexpr uintptr_t Locked = 0x520;
         inline constexpr uintptr_t Anchored = 0x521;
         inline constexpr uintptr_t Massless = 0x5A1;
@@ -350,8 +350,8 @@ namespace Mur4 {
     }
 
     namespace BillboardGui {
-        inline constexpr uintptr_t Enabled = 0x260;
         inline constexpr uintptr_t ResetOnSpawn = 0x261;
+        inline constexpr uintptr_t Enabled = 0x40D;
         inline constexpr uintptr_t Size = 0x528;
         inline constexpr uintptr_t ExtentsOffset = 0x538;
         inline constexpr uintptr_t ExtentsOffsetWorldSpace = 0x544;
@@ -499,10 +499,10 @@ namespace Mur4 {
 
     namespace ColorCorrectionEffect {
         inline constexpr uintptr_t Enabled = 0x98;
-        inline constexpr uintptr_t TintColor = 0xA0;
-        inline constexpr uintptr_t Brightness = 0xAC;
-        inline constexpr uintptr_t Contrast = 0xB0;
-        inline constexpr uintptr_t Saturation = 0xB4;
+        inline constexpr uintptr_t TintColor = 0xD0;
+        inline constexpr uintptr_t Brightness = 0xDC;
+        inline constexpr uintptr_t Contrast = 0xE4;
+        inline constexpr uintptr_t Saturation = 0xE8;
     }
 
     namespace ColorGradingEffect {
@@ -540,7 +540,6 @@ namespace Mur4 {
     }
 
     namespace CornerWedgePart {
-        inline constexpr uintptr_t CollisionGroup = 0x68;
         inline constexpr uintptr_t BackParamA = 0xB0;
         inline constexpr uintptr_t BackParamB = 0xB4;
         inline constexpr uintptr_t BottomParamA = 0xC0;
@@ -778,7 +777,7 @@ namespace Mur4 {
     namespace FakeDataModel {
         inline constexpr uintptr_t DataModel = 0x1F8;
         inline constexpr uintptr_t RealDataModel = 0x1F8;
-        inline constexpr uintptr_t Pointer = 0x8F8E968;
+        inline constexpr uintptr_t Pointer = 0x8E16368;
     }
 
     namespace FileMesh {
@@ -826,9 +825,8 @@ namespace Mur4 {
         inline constexpr uintptr_t Velocity = 0x360;
         inline constexpr uintptr_t RotVelocity = 0x36C;
         inline constexpr uintptr_t Size = 0x444;
-        inline constexpr uintptr_t Friction = 0x4DC;
-        inline constexpr uintptr_t Elasticity = 0x4E0;
-        inline constexpr uintptr_t MaterialVariant = 0x538;
+        inline constexpr uintptr_t Friction = 0x4E4;
+        inline constexpr uintptr_t Elasticity = 0x4E8;
     }
 
     namespace FlangeSoundEffect {
@@ -955,7 +953,6 @@ namespace Mur4 {
         inline constexpr uintptr_t MotorMaxTorque = 0x170;
         inline constexpr uintptr_t Radius = 0x174;
         inline constexpr uintptr_t Restitution = 0x178;
-        inline constexpr uintptr_t ServoMaxTorque = 0x17C;
         inline constexpr uintptr_t TargetAngle = 0x180;
         inline constexpr uintptr_t UpperAngle = 0x184;
     }
@@ -965,7 +962,6 @@ namespace Mur4 {
     }
 
     namespace Humanoid {
-        inline constexpr uintptr_t EvaluateStateMachine = 0x68;
         inline constexpr uintptr_t DisplayName = 0xA0;
         inline constexpr uintptr_t CameraOffset = 0x110;
         inline constexpr uintptr_t WalkToPoint = 0x158;
@@ -973,8 +969,6 @@ namespace Mur4 {
         inline constexpr uintptr_t HealthDisplayDistance = 0x17C;
         inline constexpr uintptr_t Health = 0x184;
         inline constexpr uintptr_t HipHeight = 0x188;
-        inline constexpr uintptr_t JumpHeight = 0x198;
-        inline constexpr uintptr_t JumpPower = 0x19C;
         inline constexpr uintptr_t MaxHealth = 0x1A0;
         inline constexpr uintptr_t MaxSlopeAngle = 0x1A4;
         inline constexpr uintptr_t NameDisplayDistance = 0x1A8;
@@ -984,14 +978,15 @@ namespace Mur4 {
         inline constexpr uintptr_t AutomaticScalingEnabled = 0x1CE;
         inline constexpr uintptr_t BreakJointsOnDeath = 0x1D0;
         inline constexpr uintptr_t Jump = 0x1D4;
-        inline constexpr uintptr_t PlatformStand = 0x1D6;
-        inline constexpr uintptr_t RequiresNeck = 0x1D7;
-        inline constexpr uintptr_t Sit = 0x1D8;
-        inline constexpr uintptr_t UseJumpPower = 0x1DA;
-        inline constexpr uintptr_t WalkspeedCheck = 0x3A4;
-        inline constexpr uintptr_t HumanoidRootPart = 0x468;
-        inline constexpr uintptr_t Torso = 0x4C8;
-        inline constexpr uintptr_t HumanoidState = 0x8B0;
+        inline constexpr uintptr_t PlatformStand = 0x1D5;
+        inline constexpr uintptr_t RequiresNeck = 0x1D6;
+        inline constexpr uintptr_t Sit = 0x1D7;
+        inline constexpr uintptr_t UseJumpPower = 0x1D9;
+        inline constexpr uintptr_t WalkspeedCheck = 0x39C;
+        inline constexpr uintptr_t HumanoidRootPart = 0x460;
+        inline constexpr uintptr_t Torso = 0x4C0;
+        inline constexpr uintptr_t EvaluateStateMachine = 0x5E1;
+        inline constexpr uintptr_t HumanoidState = 0x8A8;
     }
 
     namespace HumanoidDescription {
@@ -1185,7 +1180,6 @@ namespace Mur4 {
     }
 
     namespace IntersectOperation {
-        inline constexpr uintptr_t CollisionGroup = 0x68;
         inline constexpr uintptr_t BackParamA = 0xB0;
         inline constexpr uintptr_t BackParamB = 0xB4;
         inline constexpr uintptr_t BottomParamA = 0xC0;
@@ -1231,8 +1225,8 @@ namespace Mur4 {
         inline constexpr uintptr_t FogEnd = 0x114;
         inline constexpr uintptr_t FogStart = 0x118;
         inline constexpr uintptr_t GeographicLatitude = 0x11C;
-        inline constexpr uintptr_t ShadowSoftness = 0x124;
-        inline constexpr uintptr_t Sky = 0x1B0;
+        inline constexpr uintptr_t ShadowSoftness = 0x128;
+        inline constexpr uintptr_t Sky = 0x1B8;
     }
 
     namespace LineForce {
@@ -1281,6 +1275,7 @@ namespace Mur4 {
     }
 
     namespace MeshPart {
+        inline constexpr uintptr_t CollisionGroup = 0x68;
         inline constexpr uintptr_t BackParamA = 0xB0;
         inline constexpr uintptr_t BackParamB = 0xB4;
         inline constexpr uintptr_t BottomParamA = 0xC0;
@@ -1300,6 +1295,7 @@ namespace Mur4 {
         inline constexpr uintptr_t Texture = 0x328;
         inline constexpr uintptr_t TextureID = 0x328;
         inline constexpr uintptr_t DoubleSided = 0x364;
+        inline constexpr uintptr_t MaterialVariant = 0x438;
     }
 
     namespace Misc {
@@ -1310,6 +1306,7 @@ namespace Mur4 {
     namespace Model {
         inline constexpr uintptr_t Scale = 0x12C;
         inline constexpr uintptr_t PrimaryPart = 0x240;
+        inline constexpr uintptr_t ExplorerIconContent = 0xA90;
     }
 
     namespace ModuleScript {
@@ -1323,7 +1320,6 @@ namespace Mur4 {
     }
 
     namespace NegateOperation {
-        inline constexpr uintptr_t CollisionGroup = 0x68;
         inline constexpr uintptr_t BackParamA = 0xB0;
         inline constexpr uintptr_t BackParamB = 0xB4;
         inline constexpr uintptr_t BottomParamA = 0xC0;
@@ -1353,6 +1349,7 @@ namespace Mur4 {
 
     namespace Part {
         inline constexpr uintptr_t CollisionGroup = 0x68;
+        inline constexpr uintptr_t CanCollide = 0x69;
         inline constexpr uintptr_t BackParamA = 0xB0;
         inline constexpr uintptr_t BackParamB = 0xB4;
         inline constexpr uintptr_t BottomParamA = 0xC0;
@@ -1370,9 +1367,7 @@ namespace Mur4 {
         inline constexpr uintptr_t Transparency = 0x118;
         inline constexpr uintptr_t CastShadow = 0x120;
         inline constexpr uintptr_t Primitive = 0x178;
-        inline constexpr uintptr_t MaterialVariant = 0x238;
         inline constexpr uintptr_t CanQuery = 0x322;
-        inline constexpr uintptr_t CanCollide = 0x440;
         inline constexpr uintptr_t Locked = 0x520;
         inline constexpr uintptr_t Anchored = 0x521;
         inline constexpr uintptr_t Massless = 0x5A1;
@@ -1508,9 +1503,9 @@ namespace Mur4 {
         inline constexpr uintptr_t RotVelocity = 0xEC;
         inline constexpr uintptr_t Flags = 0x1BE;
         inline constexpr uintptr_t Size = 0x1C4;
-        inline constexpr uintptr_t Owner = 0x218;
-        inline constexpr uintptr_t Friction = 0x25C;
-        inline constexpr uintptr_t Elasticity = 0x260;
+        inline constexpr uintptr_t Owner = 0x220;
+        inline constexpr uintptr_t Friction = 0x264;
+        inline constexpr uintptr_t Elasticity = 0x268;
     }
 
     namespace PrimitiveFlags {
@@ -1536,6 +1531,7 @@ namespace Mur4 {
 
     namespace ProceduralModel {
         inline constexpr uintptr_t Size = 0x360;
+        inline constexpr uintptr_t ExplorerIconContent = 0x410;
     }
 
     namespace ProximityPrompt {
@@ -1610,9 +1606,9 @@ namespace Mur4 {
     }
 
     namespace ScreenGui {
-        inline constexpr uintptr_t IgnoreGuiInset = 0x68;
         inline constexpr uintptr_t Enabled = 0x260;
         inline constexpr uintptr_t ResetOnSpawn = 0x261;
+        inline constexpr uintptr_t IgnoreGuiInset = 0x296;
         inline constexpr uintptr_t DisplayOrder = 0x508;
     }
 
@@ -1622,7 +1618,6 @@ namespace Mur4 {
     }
 
     namespace ScrollingFrame {
-        inline constexpr uintptr_t ScrollingEnabled = 0x13C;
         inline constexpr uintptr_t Position = 0x2A8;
         inline constexpr uintptr_t Size = 0x2C8;
         inline constexpr uintptr_t BackgroundColor3 = 0x2D8;
@@ -1643,6 +1638,7 @@ namespace Mur4 {
         inline constexpr uintptr_t CanvasPosition = 0x73C;
         inline constexpr uintptr_t ScrollBarImageTransparency = 0x764;
         inline constexpr uintptr_t ScrollBarThickness = 0x768;
+        inline constexpr uintptr_t ScrollingEnabled = 0x77C;
     }
 
     namespace Seat {
@@ -1666,9 +1662,9 @@ namespace Mur4 {
         inline constexpr uintptr_t Velocity = 0x360;
         inline constexpr uintptr_t RotVelocity = 0x36C;
         inline constexpr uintptr_t Size = 0x444;
-        inline constexpr uintptr_t CollisionGroup = 0x4C0;
-        inline constexpr uintptr_t Friction = 0x4DC;
-        inline constexpr uintptr_t Elasticity = 0x4E0;
+        inline constexpr uintptr_t CollisionGroup = 0x4C8;
+        inline constexpr uintptr_t Friction = 0x4E4;
+        inline constexpr uintptr_t Elasticity = 0x4E8;
     }
 
     namespace SelectionBox {
@@ -1756,14 +1752,14 @@ namespace Mur4 {
         inline constexpr uintptr_t TimePosition = 0xE0;
         inline constexpr uintptr_t LoopRegion = 0xE8;
         inline constexpr uintptr_t PlaybackRegion = 0xF0;
-        inline constexpr uintptr_t PlaybackSpeed = 0x10C;
-        inline constexpr uintptr_t RollOffMaxDistance = 0x110;
-        inline constexpr uintptr_t RollOffMinDistance = 0x114;
-        inline constexpr uintptr_t Volume = 0x120;
-        inline constexpr uintptr_t Looped = 0x12D;
-        inline constexpr uintptr_t PlayOnRemove = 0x12E;
-        inline constexpr uintptr_t PlaybackRegionsEnabled = 0x12F;
-        inline constexpr uintptr_t Playing = 0x130;
+        inline constexpr uintptr_t PlaybackSpeed = 0xFC;
+        inline constexpr uintptr_t RollOffMaxDistance = 0x100;
+        inline constexpr uintptr_t RollOffMinDistance = 0x104;
+        inline constexpr uintptr_t Volume = 0x110;
+        inline constexpr uintptr_t Looped = 0x115;
+        inline constexpr uintptr_t PlayOnRemove = 0x116;
+        inline constexpr uintptr_t PlaybackRegionsEnabled = 0x117;
+        inline constexpr uintptr_t Playing = 0x118;
     }
 
     namespace SoundService {
@@ -1799,6 +1795,7 @@ namespace Mur4 {
         inline constexpr uintptr_t AllowTeamChangeOnTouch = 0x1D8;
         inline constexpr uintptr_t Enabled = 0x1D9;
         inline constexpr uintptr_t Neutral = 0x1DA;
+        inline constexpr uintptr_t MaterialVariant = 0x238;
     }
 
     namespace SpecialMesh {
@@ -1876,14 +1873,14 @@ namespace Mur4 {
         inline constexpr uintptr_t Enabled = 0x260;
         inline constexpr uintptr_t ResetOnSpawn = 0x261;
         inline constexpr uintptr_t Active = 0x51C;
-        inline constexpr uintptr_t Brightness = 0x608;
-        inline constexpr uintptr_t LightInfluence = 0x610;
-        inline constexpr uintptr_t MaxDistance = 0x614;
-        inline constexpr uintptr_t PixelsPerStud = 0x618;
-        inline constexpr uintptr_t ToolPunchThroughDistance = 0x624;
-        inline constexpr uintptr_t ZOffset = 0x628;
-        inline constexpr uintptr_t AlwaysOnTop = 0x62C;
-        inline constexpr uintptr_t ClipsDescendants = 0x62D;
+        inline constexpr uintptr_t Brightness = 0x610;
+        inline constexpr uintptr_t LightInfluence = 0x618;
+        inline constexpr uintptr_t MaxDistance = 0x61C;
+        inline constexpr uintptr_t PixelsPerStud = 0x620;
+        inline constexpr uintptr_t ToolPunchThroughDistance = 0x62C;
+        inline constexpr uintptr_t ZOffset = 0x630;
+        inline constexpr uintptr_t AlwaysOnTop = 0x634;
+        inline constexpr uintptr_t ClipsDescendants = 0x635;
     }
 
     namespace SurfaceLight {
@@ -1913,7 +1910,7 @@ namespace Mur4 {
         inline constexpr uintptr_t JobName = 0x18;
         inline constexpr uintptr_t JobStart = 0xC8;
         inline constexpr uintptr_t JobEnd = 0xD0;
-        inline constexpr uintptr_t Pointer = 0x8F1E408;
+        inline constexpr uintptr_t Pointer = 0x8DA5D98;
     }
 
     namespace Team {
@@ -1940,10 +1937,10 @@ namespace Mur4 {
     }
 
     namespace TextBox {
-        inline constexpr uintptr_t RichText = 0x48;
-        inline constexpr uintptr_t TextWrapped = 0x48;
-        inline constexpr uintptr_t ClearTextOnFocus = 0x69;
-        inline constexpr uintptr_t TextScaled = 0x1A9;
+        inline constexpr uintptr_t ClearTextOnFocus = 0x68;
+        inline constexpr uintptr_t TextScaled = 0x68;
+        inline constexpr uintptr_t TextWrapped = 0x68;
+        inline constexpr uintptr_t RichText = 0x1A1;
         inline constexpr uintptr_t Position = 0x2A8;
         inline constexpr uintptr_t Size = 0x2C8;
         inline constexpr uintptr_t BackgroundColor3 = 0x2D8;
@@ -2018,7 +2015,8 @@ namespace Mur4 {
     }
 
     namespace TextLabel {
-        inline constexpr uintptr_t TextWrapped = 0x1A1;
+        inline constexpr uintptr_t TextWrapped = 0x48;
+        inline constexpr uintptr_t RichText = 0x130;
         inline constexpr uintptr_t Position = 0x2A8;
         inline constexpr uintptr_t Size = 0x2C8;
         inline constexpr uintptr_t BackgroundColor3 = 0x2D8;
@@ -2032,8 +2030,7 @@ namespace Mur4 {
         inline constexpr uintptr_t Active = 0x340;
         inline constexpr uintptr_t ClipsDescendants = 0x341;
         inline constexpr uintptr_t Visible = 0x345;
-        inline constexpr uintptr_t RichText = 0x658;
-        inline constexpr uintptr_t TextScaled = 0x749;
+        inline constexpr uintptr_t TextScaled = 0x411;
         inline constexpr uintptr_t Text = 0x888;
         inline constexpr uintptr_t LineHeight = 0x8E0;
         inline constexpr uintptr_t OpenTypeFeatures = 0xAD8;
@@ -2124,6 +2121,7 @@ namespace Mur4 {
         inline constexpr uintptr_t TopParamA = 0x108;
         inline constexpr uintptr_t TopParamB = 0x10C;
         inline constexpr uintptr_t Transparency = 0x118;
+        inline constexpr uintptr_t MaterialVariant = 0x238;
     }
 
     namespace UIAspectRatioConstraint {
@@ -2249,6 +2247,7 @@ namespace Mur4 {
     }
 
     namespace VehicleSeat {
+        inline constexpr uintptr_t CollisionGroup = 0x68;
         inline constexpr uintptr_t BackParamA = 0xB0;
         inline constexpr uintptr_t BackParamB = 0xB4;
         inline constexpr uintptr_t BottomParamA = 0xC0;
@@ -2342,7 +2341,7 @@ namespace Mur4 {
         inline constexpr uintptr_t ViewMatrix = 0x170;
         inline constexpr uintptr_t FakeDataModel = 0xAF0;
         inline constexpr uintptr_t Dimensions = 0xB10;
-        inline constexpr uintptr_t Pointer = 0x8A11808;
+        inline constexpr uintptr_t Pointer = 0x8896B98;
     }
 
     namespace WedgePart {
@@ -2413,18 +2412,4 @@ namespace Mur4 {
         inline constexpr uintptr_t UVMaxBound = 0xC8;
         inline constexpr uintptr_t UVMinBound = 0xD0;
     }
-
-    // ---- Pointer & Structure Chain Quick Aliases ----
-    inline constexpr uintptr_t VisualEnginePointer      = 0x8A11808;
-    inline constexpr uintptr_t FakeDataModelPointer     = 0x8F8E968;
-    inline constexpr uintptr_t FakeDataModelToDataModel = 0x1F8;
-    inline constexpr uintptr_t DataModelToWorkspace     = 0x168;
-    inline constexpr uintptr_t PlayersToLocalPlayer     = 0x118;
-    inline constexpr uintptr_t PlayerToCharacter        = 0x2A0;
-    inline constexpr uintptr_t BasePartToPrimitive      = 0x178;
-    inline constexpr uintptr_t PrimitiveToPosition      = 0xD4;
-    inline constexpr uintptr_t InstanceName             = 0x68;
-    inline constexpr uintptr_t InstanceParent           = 0x60;
-    inline constexpr uintptr_t InstanceChildrenStart    = 0x70;
-    inline constexpr uintptr_t InstanceChildrenEnd      = 0x8;
 }
